@@ -8,7 +8,7 @@ public class App extends AppBase
     @Override // This method is always periodically called, regardless of the app's current status
     public void determineAppStatus() 
     {   
-        if(app_container.getAppStatus())
+        if(!app_container.getAppStatus())
         {
             super.initiateAppStatus();
             return;
@@ -24,6 +24,6 @@ public class App extends AppBase
     @Override 
     public void appPeriodic() 
     { 
-        
+        app_container.runBotSim();
     }
 }
